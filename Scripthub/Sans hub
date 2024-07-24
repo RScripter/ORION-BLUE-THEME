@@ -27,60 +27,6 @@ local Tab2 = SANS:MakeTab({
 	PremiumOnly = false
 })
 
--- Carnage section in tab2
-local Carnage = Tab2:AddSection({
-    Name = "Carnage Scripts"
-})
-
-Tab2:AddButton({
-	Name = "Evade",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Blade ball",
-	Callback = function()
-      		loadstring(game:HttpGet('https://reddyhub.xyz/loader.html'))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Brookhaven",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Bedwars",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Bloxburg",
-	Callback = function()
-      		loadstring(game:HttpGet("https://bloxburger.eu/scripts/free/script.lua"))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Slap Battles",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua"))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Arsenal",
-	Callback = function()
-       	 loadstring(game:HttpGet('https://raw.githubusercontent.com/wuhaz/arsenal/main/main.lua'))()
-  	end    
-})
-
 -- Script Hubs section in tab2
 local ScriptHubs = Tab2:AddSection({
     Name = "Script Hubs"
@@ -156,6 +102,60 @@ local Tab3 = SANS:MakeTab({
    Name = "Games",
    Icon = "games",
    PremiumOnly = false
+})
+
+-- Carnage section in tab2
+local Carnage = Tab3:AddSection({
+    Name = "Carnage Scripts"
+})
+
+Tab3:AddButton({
+	Name = "Evade",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Blade ball",
+	Callback = function()
+      		loadstring(game:HttpGet('https://reddyhub.xyz/loader.html'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Brookhaven",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Bedwars",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Bloxburg",
+	Callback = function()
+      		loadstring(game:HttpGet("https://bloxburger.eu/scripts/free/script.lua"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Slap Battles",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Arsenal",
+	Callback = function()
+       	 loadstring(game:HttpGet('https://raw.githubusercontent.com/wuhaz/arsenal/main/main.lua'))()
+  	end    
 })
 
 local Section = Tab3:AddSection({
