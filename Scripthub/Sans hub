@@ -1,0 +1,122 @@
+-- Load the library
+local SANS = loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/source.lua"))()
+
+local SANS = SANS:MakeWindow({Name = "SANS HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = SANS:MakeTab({
+	Name = "Home",
+	Icon = "home",
+	PremiumOnly = false
+})
+
+-- Status section in Home Tab
+local status = Tab:AddSection({
+    Name = "Status"
+})
+
+Tab:AddButton({
+	Name = "Coming Soon!",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Other",
+	Icon = "rbxassetid://18630363976",
+	PremiumOnly = false
+})
+
+-- Carnage section in tab2
+local Carnage = Tab2:AddSection({
+    Name = "Carnage Scripts"
+})
+
+Tab2:AddButton({
+	Name = "Evade",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Blade ball",
+	Callback = function()
+      		loadstring(game:HttpGet('https://reddyhub.xyz/loader.html'))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Brookhaven",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Bedwars",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Bloxburg",
+	Callback = function()
+      		loadstring(game:HttpGet("https://bloxburger.eu/scripts/free/script.lua"))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Slap Battles",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua"))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Arsenal",
+	Callback = function()
+       	 loadstring(game:HttpGet('https://raw.githubusercontent.com/wuhaz/arsenal/main/main.lua'))()
+  	end    
+})
+
+-- Script Hubs section in tab2
+local ScriptHubs = Tab2:AddSection({
+    Name = "Script Hubs"
+})
+
+Tab2:AddButton({
+	Name = "Rochips Panel V6.0",
+	Callback = function()
+      		loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Rochips-Panel-V6-15097"))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Tiger Hub V3",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/balintTheDevX/Tiger-X-V3/main/Tiger%20X%20its%20Back"))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Sky Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/SkyHub.txt"))() 
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Ghost Hub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "VexHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexHub"))()
+  	end    
+})
