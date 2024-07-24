@@ -21,7 +21,7 @@ Tab:AddButton({
   	end    
 })
 
-local Tab2 = Window:MakeTab({
+local Tab2 = SANS:MakeTab({
 	Name = "Other",
 	Icon = "rbxassetid://18630363976",
 	PremiumOnly = false
@@ -118,5 +118,78 @@ Tab2:AddButton({
 	Name = "VexHub",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexHub"))()
+  	end    
+})
+
+local universal = SANS:MakeTab({
+	Name = "universal",
+	Icon = "infinity",
+	PremiumOnly = false
+})
+
+local Section = universal:AddSection({
+	Name = "Scripts"
+})
+
+universal:AddButton({
+	Name = "Neon Fly Gui",
+	Callback = function()
+      		loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fly-Gui-V3-Dark-Theme-11884"))()
+  	end    
+})
+
+universal:AddButton({
+	Name = "Infinite Store",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.lua"))()
+  	end    
+})
+
+universal:AddButton({
+	Name = "universal",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script"))()
+  	end    
+}) 
+
+local Tab3 = SANS:MakeTab({
+   Name = "Games",
+   Icon = "rbxassetid://18631747306",
+   PremiumOnly = false
+})
+
+local Section = Tab3:AddSection({
+	Name = "Murder Mystery 2"
+})
+
+Tab3:AddButton({
+	Name = "Symphony Hub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Yahrm",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", false))()
+  	end    
+})
+
+local Section2 = Tab3:AddSection({
+	Name = "Break in 2"
+})
+
+Tab3:AddButton({
+	Name = "Breaking Blitz",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/RScriptz/RobloxScripts/main/BreakIn2.lua"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "JN HH Gaming",
+	Callback = function()
+      		loadstring(game:HttpGet("https://freenote.biz/raw/qLlMYwbVNd",true))()
   	end    
 })
