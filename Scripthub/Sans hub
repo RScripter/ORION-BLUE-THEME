@@ -92,12 +92,7 @@ local status = Tab:AddSection({
     Name = "Status"
 })
 
-Tab:AddButton({
-	Name = "Coming Soon!",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
+Tab:AddLabel("Coming Soon!")
 
 local coolthingy2 = Tab:AddSection({
 	Name = "_________________________________________________________________________"
