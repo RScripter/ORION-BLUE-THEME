@@ -1,3 +1,29 @@
+local ScreenGui = Instance.new("ScreenGui")
+local TextButton = Instance.new("TextButton")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+TextButton.Parent = ScreenGui
+TextButton.Size = UDim2.new(0, 50, 0, 50)  -- Smaller size
+TextButton.Position = UDim2.new(0, 10, 0, 10)  -- Top-left corner with a slight offset
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)  -- Green color
+TextButton.BackgroundTransparency = 0.5  -- Semi-transparent
+TextButton.Text = "Open"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text
+TextButton.Font = Enum.Font.SourceSans
+TextButton.TextScaled = true
+
+-- Make the button circular
+TextButton.ClipsDescendants = true
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0.5, 0)  -- Makes it circular
+UICorner.Parent = TextButton
+
+-- Function for when the button is clicked
+TextButton.MouseButton1Click:Connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, "RightShift", false, game)
+end)
+
 -- Load the library
 local SANS = loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/source.lua"))()
 
@@ -7,6 +33,10 @@ local Tab = SANS:MakeTab({
 	Name = "Home",
 	Icon = "home",
 	PremiumOnly = false
+})
+
+local coolthingy = Tab:AddSection({
+	Name = "_________________________________________________________________________"
 })
 
 -- Status section in Home Tab
@@ -21,10 +51,18 @@ Tab:AddButton({
   	end    
 })
 
+local coolthingy2 = Tab:AddSection({
+	Name = "_________________________________________________________________________"
+})
+
 local Tab2 = SANS:MakeTab({
 	Name = "Other",
 	Icon = "others",
 	PremiumOnly = false
+})
+
+local coolthingy = Tab2:AddSection({
+	Name = "_________________________________________________________________________"
 })
 
 -- Script Hubs section in tab2
@@ -67,13 +105,21 @@ Tab2:AddButton({
   	end    
 })
 
+local coolthingy2 = Tab2:AddSection({
+	Name = "_________________________________________________________________________"
+})
+
 local universal = SANS:MakeTab({
 	Name = "universal",
 	Icon = "infinity",
 	PremiumOnly = false
 })
 
-local Section = universal:AddSection({
+local coolthingy2 = universal:AddSection({
+	Name = "_________________________________________________________________________"
+})
+
+local Section21 = universal:AddSection({
 	Name = "Scripts"
 })
 
@@ -92,16 +138,24 @@ universal:AddButton({
 })
 
 universal:AddButton({
-	Name = "universal",
+	Name = "Troll Panel",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script"))()
   	end    
-}) 
+})
+
+local coolthingy2 = universal:AddSection({
+	Name = "_________________________________________________________________________"
+})
 
 local Tab3 = SANS:MakeTab({
    Name = "Games",
    Icon = "games",
    PremiumOnly = false
+})
+
+local Section = Tab3:AddSection({
+	Name = "_________________________________________________________________________"
 })
 
 -- Carnage section in tab2
@@ -158,6 +212,10 @@ Tab3:AddButton({
   	end    
 })
 
+local Sectiohn = Tab3:AddSection({
+	Name = "_________________________________________________________________________"
+})
+
 local Section = Tab3:AddSection({
 	Name = "Murder Mystery 2"
 })
@@ -174,6 +232,10 @@ Tab3:AddButton({
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", false))()
   	end    
+})
+
+local Section = Tab3:AddSection({
+	Name = "_________________________________________________________________________"
 })
 
 local Section2 = Tab3:AddSection({
@@ -194,10 +256,18 @@ Tab3:AddButton({
   	end    
 })
 
+local Section1 = Tab3:AddSection({
+	Name = "_________________________________________________________________________"
+})
+
 local FE = SANS:MakeTab({
    Name = "Filtering Enabled",
    Icon = "filteringenabled",
    PremiumOnly = false
+})
+
+local Section = FE:AddSection({
+	Name = "_________________________________________________________________________"
 })
 
 FE:AddButton({
@@ -242,9 +312,6 @@ FE:AddButton({
   	end    
 })
 
-FE:AddButton({
-	Name = "Genesis Fe",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/-ECAX-HUB-/main/Genesis%20Fe"))()
-  	end    
+local Section1 = FE:AddSection({
+	Name = "_________________________________________________________________________"
 })
