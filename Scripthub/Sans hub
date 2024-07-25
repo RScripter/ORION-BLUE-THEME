@@ -55,6 +55,12 @@ local coolthingy2 = Tab:AddSection({
 	Name = "_________________________________________________________________________"
 })
 
+Tab:AddLabel("by playerexploits on youtube link: m.youtube.com/@playerexploits")
+
+local coolthingy3 = Tab:AddSection({
+	Name = "_________________________________________________________________________"
+})
+
 local Tab2 = SANS:MakeTab({
 	Name = "Other",
 	Icon = "others",
