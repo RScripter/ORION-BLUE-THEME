@@ -46,14 +46,11 @@ end
 -- Connect the button click event to the function
 imageButton.MouseButton1Click:Connect(onButtonClick)
 
-local ScreenGui = Instance.new("ScreenGui")
+-- Create and configure the TextButton
 local TextButton = Instance.new("TextButton")
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-TextButton.Parent = ScreenGui
+TextButton.Parent = screenGui
 TextButton.Size = UDim2.new(0, 50, 0, 50)  -- Smaller size
-TextButton.Position = UDim2.new(0, 10, 0, 10)  -- Top-left corner with a slight offset
+TextButton.Position = UDim2.new(0, 10, 1, -60)  -- Bottom-left corner with a slight offset
 TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)  -- Green color
 TextButton.BackgroundTransparency = 0.5  -- Semi-transparent
 TextButton.Text = "Open"
