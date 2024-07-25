@@ -1,3 +1,51 @@
+-- Create a ScreenGui and ImageButton if not already created
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Create and configure ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "CenteredImageGui"
+screenGui.Parent = playerGui
+
+-- Add BlurEffect to Lighting
+local lighting = game:GetService("Lighting")
+local blurEffect = Instance.new("BlurEffect")
+blurEffect.Size = 24 -- Adjust the blur intensity (higher values mean more blur)
+blurEffect.Parent = lighting
+
+-- Create and configure ImageButton
+local imageButton = Instance.new("ImageButton")
+imageButton.Size = UDim2.new(0, 100, 0, 100) -- Size of the button
+imageButton.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor to center
+imageButton.Position = UDim2.new(0.5, 0, 0.5, 0) -- Centered on the screen
+imageButton.Image = "rbxassetid://18646253053" -- Your image ID
+imageButton.Parent = screenGui
+
+-- Create the TextLabel
+local textLabel = Instance.new("TextLabel")
+textLabel.Parent = screenGui
+textLabel.Text = "ROBLOX"
+textLabel.Size = UDim2.new(1, 0, 0, 100)  -- Adjust size to make text bigger
+textLabel.Position = UDim2.new(0, 0, 0, 0)  -- Adjust position as needed
+
+-- Set the TextLabel's properties
+textLabel.TextTransparency = 0  -- Text is visible
+textLabel.BackgroundTransparency = 1  -- Label background is invisible
+textLabel.TextStrokeTransparency = 1  -- No stroke around the text
+textLabel.TextColor3 = Color3.fromRGB(0, 0, 0)  -- Set text color to black
+textLabel.Font = Enum.Font.SourceSans
+textLabel.TextSize = 48  -- Make text larger
+
+-- Function to handle button click
+local function onButtonClick()
+    textLabel:Destroy()  -- Destroy the ROBLOX text
+    imageButton:Destroy()
+    blurEffect:Destroy()
+end
+
+-- Connect the button click event to the function
+imageButton.MouseButton1Click:Connect(onButtonClick)
+
 local ScreenGui = Instance.new("ScreenGui")
 local TextButton = Instance.new("TextButton")
 
@@ -55,11 +103,31 @@ local coolthingy2 = Tab:AddSection({
 	Name = "_________________________________________________________________________"
 })
 
+local coolthingy4 = Tab:AddSection({
+	Name = "Credits"
+})
+
 Tab:AddLabel("by playerexploits on youtube link: m.youtube.com/@playerexploits")
 
 local coolthingy3 = Tab:AddSection({
 	Name = "_________________________________________________________________________"
 })
+
+local coolthingy5 = Tab:AddSection({
+	Name = "Update Logs"
+})
+
+Tab:AddLabel("Made This Script Hub")
+Tab:AddLabel("Added Home")
+Tab:AddLabel("Added Other")
+Tab:AddLabel("Added Universal")
+Tab:AddLabel("Added Games")
+Tab:AddLabel("Added Filtering Enabled")
+
+local coolthingy5 = Tab:AddSection({
+	Name = "_________________________________________________________________________"
+})
+
 
 local Tab2 = SANS:MakeTab({
 	Name = "Other",
