@@ -1,0 +1,3 @@
+if gethui():FindFirstChild("Orion") then
+    gethui().Orion.Enabled = not gethui().Orion.Enabled
+end
