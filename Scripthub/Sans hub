@@ -97,6 +97,13 @@ print("Script executed, by PlayerExploits...")
 -- Load the library
 local SANS = loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/source.lua"))()
 
+OrionLib:MakeNotification({
+	Name = "SANS HUB loaded",
+	Content = "Made By PlayerExploits On YT!",
+	Image = "rbxassetid://18659702506",
+	Time = 5
+})
+
 local SANS = SANS:MakeWindow({Name = "SANS HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local Tab = SANS:MakeTab({
