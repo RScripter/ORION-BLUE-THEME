@@ -48,12 +48,12 @@ imageButton.MouseButton1Click:Connect(onButtonClick)
 
 -- Create a ScreenGui and ImageButton if not already created
 local player = game.Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
+local coreGui = game:GetService("CoreGui")
 
 -- Create and configure ScreenGui
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "LeftSideToggleButtonGui"
-screenGui.Parent = playerGui
+screenGui.Parent = coreGui
 
 -- Create and configure ImageButton
 local imageButton = Instance.new("ImageButton")
@@ -74,25 +74,21 @@ uiStroke.Thickness = 2 -- Thickness of the border
 uiStroke.Color = Color3.fromRGB(0, 255, 255) -- Cyan color
 uiStroke.Parent = imageButton
 
+-- Initialize ToggleState to false to start with Function 1
 local toggleState = false
+
+-- Function to handle button toggle
 local function onButtonClick()
-    if toggleState == false then
-        if gethui():FindFirstChild("Orion") then
-    gethui().Orion.Enabled = not gethui().Orion.Enabled
-end
-		UIHidden = true
-    else
-        toggleState = false
-        if gethui():FindFirstChild("Orion") then
-    gethui().Orion.Enabled = not gethui().Orion.Enabled
-end
+    if gethui():FindFirstChild("Orion") then
+        gethui().Orion.Enabled = not gethui().Orion.Enabled
     end
+    UIHidden = true
 end
 
 -- Connect the button click event to the function
 imageButton.MouseButton1Click:Connect(onButtonClick)
 
-print("Script executed, by PlayerExploits...")
+print("Script Executed,Made by PlayerExploits On Youtube...")
 
 -- Load the library
 local SANS = loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/source.lua"))()
