@@ -421,7 +421,7 @@ local Section2 = FE:AddSection({
 	Name = "_________________________________________________________________________"
 })
 
-local ScriptHubs = ECAX:MakeTab({
+local ScriptHubs = SANS:MakeTab({
 	Name = "Scripthubs",
 	Icon = "scriptlist",
 	PremiumOnly = false
