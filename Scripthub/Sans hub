@@ -48,18 +48,18 @@ imageButton.MouseButton1Click:Connect(onButtonClick)
 
 -- Create a ScreenGui and ImageButton if not already created
 local player = game.Players.LocalPlayer
-local coreGui = game:GetService("CoreGui")
+local playerGui = player:WaitForChild("PlayerGui")
 
 -- Create and configure ScreenGui
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "LeftSideToggleButtonGui"
-screenGui.Parent = coreGui
+screenGui.Name = "RightSideToggleButtonGui"
+screenGui.Parent = playerGui
 
 -- Create and configure ImageButton
 local imageButton = Instance.new("ImageButton")
 imageButton.Size = UDim2.new(0, 50, 0, 50) -- Smaller size for the button
-imageButton.AnchorPoint = Vector2.new(0, 0.5) -- Anchor to the left center
-imageButton.Position = UDim2.new(0, 10, 0.5, 0) -- Positioned on the left side, slightly inset
+imageButton.AnchorPoint = Vector2.new(1, 0.5) -- Anchor to the right center
+imageButton.Position = UDim2.new(1, -10, 0.5, 0) -- Positioned on the right side, slightly inset
 imageButton.Image = "rbxassetid://18659702506" -- Your new image ID
 imageButton.Parent = screenGui
 
@@ -74,26 +74,31 @@ uiStroke.Thickness = 2 -- Thickness of the border
 uiStroke.Color = Color3.fromRGB(0, 255, 255) -- Cyan color
 uiStroke.Parent = imageButton
 
--- Initialize ToggleState to false to start with Function 1
 local toggleState = false
-
--- Function to handle button toggle
 local function onButtonClick()
-    if gethui():FindFirstChild("Orion") then
-        gethui().Orion.Enabled = not gethui().Orion.Enabled
+    if toggleState == false then
+        if gethui():FindFirstChild("Orion") then
+            gethui().Orion.Enabled = not gethui().Orion.Enabled
+        end
+        UIHidden = true
+    else
+        toggleState = false
+        if gethui():FindFirstChild("Orion") then
+            gethui().Orion.Enabled = not gethui().Orion.Enabled
+        end
     end
-    UIHidden = true
 end
 
 -- Connect the button click event to the function
 imageButton.MouseButton1Click:Connect(onButtonClick)
 
-print("Script Executed,Made by PlayerExploits On Youtube...")
+print("Script executed, by PlayerExploits...")
 
 -- Load the library
 local SANS = loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/source.lua"))()
 
 local SANS = SANS:MakeWindow({Name = "SANS HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
 
 -- transparent looks
 if gethui():FindFirstChild("Orion") then
@@ -148,8 +153,6 @@ Tab:AddLabel("Added Other")
 Tab:AddLabel("Added Universal")
 Tab:AddLabel("Added Games")
 Tab:AddLabel("Added Filtering Enabled")
-Tab:AddLabel("Added Toggle UI")
-Tab:AddLabel("Added Transparency of the UI")
 
 local coolthingy5 = Tab:AddSection({
 	Name = "_________________________________________________________________________"
@@ -416,4 +419,28 @@ FE:AddButton({
 
 local Section2 = FE:AddSection({
 	Name = "_________________________________________________________________________"
+})
+
+local ScriptHubs = ECAX:MakeTab({
+	Name = "Scripthubs",
+	Icon = "scriptlist",
+	PremiumOnly = false
+})
+
+local Section = ScriptHubs:AddSection({
+	Name = "Made By PlayerExploits"
+})
+
+ScriptHubs:AddButton({
+	Name = "•ECAX V3•",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/-ECAX-/main/ECAX_V3.lua"))()
+  	end    
+})
+
+ScriptHubs:AddButton({
+	Name = "•SANS HUB•",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/Scripthub/Sans%20hub"))()
+  	end    
 })
