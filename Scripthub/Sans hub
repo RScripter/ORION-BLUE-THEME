@@ -122,12 +122,39 @@ local coolthingy = Tab:AddSection({
 	Name = "_________________________________________________________________________"
 })
 
--- Status section in Home Tab
-local status = Tab:AddSection({
+local StatusSection = Tab:AddSection({
     Name = "Status"
 })
 
-Tab:AddLabel("Coming Soon!")
+local player = game.Players.LocalPlayer
+local username = player.Name
+local displayName = player.DisplayName
+local userId = player.UserId
+local accountAge = player.AccountAge
+
+-- Get the current game's name and ID
+local gameName
+local success, result = pcall(function()
+    return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+end)
+if success then
+    gameName = result
+else
+    gameName = "Unknown"
+end
+
+local gameId = game.PlaceId
+
+-- Get the number of players currently in the server
+local playersInServer = #game.Players:GetPlayers()
+
+StatusSection:AddLabel("Username: " .. username)
+StatusSection:AddLabel("Display Name: " .. displayName)
+StatusSection:AddLabel("User ID: " .. userId)
+StatusSection:AddLabel("Account Age: " .. accountAge .. " days")
+StatusSection:AddLabel("Currently Playing: " .. gameName)
+StatusSection:AddLabel("Game ID: " .. gameId)
+StatusSection:AddLabel("Players in Server: " .. playersInServer)
 
 local coolthingy2 = Tab:AddSection({
 	Name = "_________________________________________________________________________"
@@ -153,8 +180,6 @@ Tab:AddLabel("Added Other")
 Tab:AddLabel("Added Universal")
 Tab:AddLabel("Added Games")
 Tab:AddLabel("Added Filtering Enabled")
-Tab:AddLabel("Added Toggle UI")
-Tab:AddLabel("Added Transparency Of The UI")
 
 local coolthingy5 = Tab:AddSection({
 	Name = "_________________________________________________________________________"
@@ -425,7 +450,7 @@ local Section2 = FE:AddSection({
 
 local ScriptHubs = SANS:MakeTab({
 	Name = "Scripthubs",
-	Icon = "scriptlist",
+	Icon = "rbxassetid://18671619379",
 	PremiumOnly = false
 })
 
@@ -445,4 +470,33 @@ ScriptHubs:AddButton({
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/Scripthub/Sans%20hub"))()
   	end    
+})
+
+local executor = SANS:MakeTab({
+    Name = "executor",
+    Icon = "rbxassetid://18659702506",
+    PremiumOnly = false
+})
+
+local scriptText = ""
+
+executor:AddTextbox({
+    Name = "Input Textbox",
+    Default = "",
+    TextDisappear = false,
+    Callback = function(value)
+        scriptText = value
+    end
+})
+
+executor:AddButton({
+    Name = "Execute",
+    Callback = function()
+        local success, err = pcall(function()
+            loadstring(scriptText)()
+        end)
+        if not success then
+            print("Error executing script: " .. err)
+        end
+    end
 })
