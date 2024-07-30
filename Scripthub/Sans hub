@@ -1,3 +1,11 @@
+-- Check if the player is on PC
+local UserInputService = game:GetService("UserInputService")
+local isPC = (UserInputService.TouchEnabled == false) and (UserInputService.KeyboardEnabled == true)
+local isMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+
+if isPC then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RScripter/ORION-BLUE-THEME/main/SANS_HUB_PC.LUA"))()
+elseif isMobile then
 -- Create a ScreenGui and ImageButton if not already created
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
@@ -45,17 +53,6 @@ end
 
 -- Connect the button click event to the function
 imageButton.MouseButton1Click:Connect(onButtonClick)
-
-local player = game.Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
-local userInputService = game:GetService("UserInputService")
-
--- Check if the user is on a mobile device
-if userInputService.TouchEnabled and not userInputService.KeyboardEnabled then
-    -- Create and configure ScreenGui
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "RightSideToggleButtonGui"
-    screenGui.Parent = playerGui
 
     -- Create and configure ImageButton
     local imageButton = Instance.new("ImageButton")
